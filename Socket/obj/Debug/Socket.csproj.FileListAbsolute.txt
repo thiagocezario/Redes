@@ -1,0 +1,6 @@
+c:\users\t.cezario\documents\visual studio 2017\Projects\Socket\Socket\bin\Debug\Socket.exe.config
+c:\users\t.cezario\documents\visual studio 2017\Projects\Socket\Socket\bin\Debug\Socket.exe
+c:\users\t.cezario\documents\visual studio 2017\Projects\Socket\Socket\bin\Debug\Socket.pdb
+c:\users\t.cezario\documents\visual studio 2017\Projects\Socket\Socket\obj\Debug\Socket.csprojResolveAssemblyReference.cache
+c:\users\t.cezario\documents\visual studio 2017\Projects\Socket\Socket\obj\Debug\Socket.exe
+c:\users\t.cezario\documents\visual studio 2017\Projects\Socket\Socket\obj\Debug\Socket.pdb
