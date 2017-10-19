@@ -1,0 +1,5 @@
+C:\Users\t.cezario\Documents\Visual Studio 2017\Projects\Socket\Redes\FClient\FClient\FClient\bin\Debug\FClient.exe.config
+C:\Users\t.cezario\Documents\Visual Studio 2017\Projects\Socket\Redes\FClient\FClient\FClient\bin\Debug\FClient.exe
+C:\Users\t.cezario\Documents\Visual Studio 2017\Projects\Socket\Redes\FClient\FClient\FClient\bin\Debug\FClient.pdb
+C:\Users\t.cezario\Documents\Visual Studio 2017\Projects\Socket\Redes\FClient\FClient\FClient\obj\Debug\FClient.exe
+C:\Users\t.cezario\Documents\Visual Studio 2017\Projects\Socket\Redes\FClient\FClient\FClient\obj\Debug\FClient.pdb
