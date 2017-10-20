@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Text;
 using Gerenciador.SocketsConnections;
+using System.IO;
 
 public class AsynchronousClient
 {
@@ -36,8 +37,8 @@ public class AsynchronousClient
             client.BeginConnect(remoteEP,
                 new AsyncCallback(ConnectCallback), client);
             connectDone.WaitOne();
-            string[] allfiles = System.IO.Directory.GetFiles("C:\\Users\\t.cezario\\Documents\\Visual Studio 2017\\Projects\\Socket\\Redes\\FClient\\Files", "*.*", System.IO.SearchOption.AllDirectories);
-            foreach (var file in allfiles)
+            string[] myFiles = Array.ConvertAll(new DirectoryInfo("c:\\temp").GetFileSystemInfos(), s => s.Name);
+            foreach (var file in myFiles)
             {
                 Console.WriteLine(file);
             }
