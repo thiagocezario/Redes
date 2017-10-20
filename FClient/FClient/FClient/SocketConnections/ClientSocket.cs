@@ -7,7 +7,9 @@ using Gerenciador.SocketsConnections;
 
 public class AsynchronousClient
 {
-    private const int PortaDoGerenciador = 5151;
+    private const int portaDoGerenciador = 23;
+    private const string ipAddress = "127.0.0.1";
+
     // ManualResetEvent instances signal completion.  
     private static ManualResetEvent connectDone =
         new ManualResetEvent(false);
@@ -18,13 +20,13 @@ public class AsynchronousClient
 
     private static String response = String.Empty;
 
-
     public static void StartClient()
     {
         try
         {
-            IPAddress IPDoGerenciador = new IPAddress(123123); //vai ter que fazer um TryParse aqui
-            IPEndPoint remoteEP = new IPEndPoint(IPDoGerenciador, PortaDoGerenciador);
+            if (!IPAddress.TryParse(ipAddress, out IPAddress ipDoGerenciador))
+                throw new FormatException(string.Format("{0} is not a valid IP address", ipAddress));
+            IPEndPoint remoteEP = new IPEndPoint(ipDoGerenciador, portaDoGerenciador);
 
             // Create a TCP/IP socket.  
             Socket client = new Socket(AddressFamily.InterNetwork,
@@ -34,9 +36,14 @@ public class AsynchronousClient
             client.BeginConnect(remoteEP,
                 new AsyncCallback(ConnectCallback), client);
             connectDone.WaitOne();
-
+            string[] allfiles = System.IO.Directory.GetFiles("C:\\Users\\t.cezario\\Documents\\Visual Studio 2017\\Projects\\Socket\\Redes\\FClient\\Files", "*.*", System.IO.SearchOption.AllDirectories);
+            foreach (var file in allfiles)
+            {
+                Console.WriteLine(file);
+            }
             Receive(client);
-            receiveDone.WaitOne();
+            //receiveDone.WaitOne();
+            Send(client, remoteEP.ToString());
         }
         catch (Exception e)
         {
